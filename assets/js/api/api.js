@@ -15,6 +15,7 @@
                 },
                 success: function(data){
                     $("#your-id-person").val(data);
+                    console.log(event.detail.inputs);
                     $.ajax({
                         url: automagno.ajaxurl,
                         method: "POST",
