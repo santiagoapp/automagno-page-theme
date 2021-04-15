@@ -1,0 +1,12 @@
+(function($){
+	console.log('Hola JQuery2');
+	$(document.addEventListener("wpcf7submit", function(event){
+		if (event.detail.contactFormId == "7701") {
+			$.ajax({
+				url:,
+				method: "POST",
+				data:
+			})
+		}
+	}))
+})(jQuery);

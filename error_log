@@ -1,0 +1,7 @@
+[24-Jul-2018 20:38:13 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/page.php on line 15
+[03-Dec-2018 02:37:58 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/404.php on line 15
+[04-Dec-2018 00:34:48 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/404.php on line 15
+[04-Dec-2018 22:18:46 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/404.php on line 15
+[02-Oct-2019 06:59:00 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/index.php on line 16
+[15-Nov-2019 20:44:13 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/404.php on line 15
+[16-Nov-2019 12:55:51 UTC] PHP Fatal error:  Call to undefined function x_get_view() in /home/erwin3112/public_html/wp-content/themes/x/404.php on line 15
