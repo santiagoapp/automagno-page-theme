@@ -23,7 +23,7 @@
                             "data": event.detail.inputs,
                             "id": $("#your-id-person").val(),
                         },
-                        success: function(data){
+                        success: function(data){ 
                             console.log(data);
                             retomaId = data;
                             var info = new FormData();
