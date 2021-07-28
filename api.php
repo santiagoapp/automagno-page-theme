@@ -175,6 +175,31 @@ function crearRetomaASC() {
 add_action("wp_ajax_crearRetomaASC", "crearRetomaASC");
 add_action("wp_ajax_nopriv_crearRetomaASC", "crearRetomaASC");
 
+function crearCarroASC() {
+    $return = array();
+
+    $post_retomaId = $_POST['retomaId'];
+    $post_stageId = 'c5adad4d-9057-44b7-85f2-964ffa735c24';
+    $post_carStageId = 'c5adad4d-9057-44b7-85f2-964ffa735c24';
+    $post_carVersionId = $_POST['data'][7][value];
+    $post_carBusinessModelId = '0743f05c-2271-498e-9b91-a195aa07f33d';
+    $post_businessModelId = '0743f05c-2271-498e-9b91-a195aa07f33d';
+    $post_kilometraje = $_POST['data'][10][value];
+    $post_kilometraje = $_POST['data'][10][value];
+
+    $cadena_json = '{"query":"mutation CreateCar {\\r\\n  createCar(input: {\\r\\n      contentType: \\"Car\\", \\r\\n      carRetakesId: \\"'. $post_retomaId .'\\", \\r\\n      stageId: \\"'. $post_stageId .'\\", \\r\\n      carStageId: \\"'. $post_carStageId .'\\", \\r\\n      carVersionId: \\"'. $post_carVersionId .'\\",\\r\\n      carBusinessModelId: \\"'. $post_carBusinessModelId .'\\",\\r\\n      businessModelId: \\"'. $post_businessModelId .'\\",\\r\\n      kilometraje: \\"'. $post_kilometraje .'\\",\\r\\n      isActive: 1\\r\\n      }) {\\r\\n    id\\r\\n  }\\r\\n}\\r\\n","variables":{}}';
+
+    $response = json_decode(connectionCURL($cadena_json), true);
+    if ($response.data == null){
+        $return = $response["errors"];
+    }else{
+        $return = [$response["data"]["createCar"]["id"], $post_retomaId];
+    }
+    wp_send_json( $return );
+}
+add_action("wp_ajax_crearCarASC", "crearCarASC");
+add_action("wp_ajax_nopriv_crearCarASC", "crearCarASC");
+
 function connectionCURL($cadena_json){
 
     $curl = curl_init();
