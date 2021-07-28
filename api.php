@@ -178,7 +178,7 @@ add_action("wp_ajax_nopriv_crearRetomaASC", "crearRetomaASC");
 function crearCarASC() {
     $return = array();
 
-    $post_retomaId = $_POST['retomaId'];
+    $post_retomaId = $_POST['id'];
     $post_stageId = 'c5adad4d-9057-44b7-85f2-964ffa735c24';
     $post_carStageId = 'c5adad4d-9057-44b7-85f2-964ffa735c24';
     $post_carVersionId = $_POST['data'][7][value];

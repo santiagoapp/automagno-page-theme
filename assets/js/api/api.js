@@ -7,6 +7,8 @@
   $(
     document.addEventListener("wpcf7submit", function (event) {
       if (event.detail.contactFormId == "7701") {
+        // =========================
+        // CREAR PERSONA
         $.ajax({
           url: automagno.ajaxurl,
           method: "POST",
@@ -14,6 +16,8 @@
             action: "crearPersonaASC",
             data: event.detail.inputs,
           },
+          // =========================
+          // CREAR RETOMA
           success: function (data) {
             $("#your-id-person").val(data);
             $.ajax({
@@ -24,6 +28,7 @@
                 data: event.detail.inputs,
                 id: $("#your-id-person").val(),
               },
+              // =========================
               success: function (data) {
                 $("#your-id-retoma").val(data);
                 $.ajax({
@@ -32,7 +37,7 @@
                   data: {
                     action: "crearCarASC",
                     data: event.detail.inputs,
-                    retomaId: $("#your-id-retoma").val(),
+                    id: $("#your-id-retoma").val(),
                   },
                   success: function (data) {
                     console.log(data);
