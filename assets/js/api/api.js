@@ -1,3 +1,5 @@
+var AWS = require("aws-sdk");
+
 (function ($) {
   console.log("Hola JQuery 3");
   var exito = true;
