@@ -175,7 +175,7 @@ function crearRetomaASC() {
 add_action("wp_ajax_crearRetomaASC", "crearRetomaASC");
 add_action("wp_ajax_nopriv_crearRetomaASC", "crearRetomaASC");
 
-function crearCarroASC() {
+function crearCarASC() {
     $return = array();
 
     $post_retomaId = $_POST['retomaId'];
