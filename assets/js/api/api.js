@@ -1,6 +1,5 @@
-var AWS = require("aws-sdk");
-
 (function ($) {
+  var AWS = require("aws-sdk");
   console.log("Hola JQuery 3");
   var exito = true;
   $("[name='cf7mls_next']").text("Siguiente");
