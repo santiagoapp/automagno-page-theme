@@ -1,5 +1,5 @@
 (function ($) {
-  console.log("Hola JQuery 3");
+  console.log("Hola JQuery Create Car");
   var exito = true;
   var carId = "";
   var personId = "";
@@ -35,7 +35,6 @@
               // =========================
               // CREAR CARRO
               success: function (data) {
-                console.log(data);
                 retomaId = $("#your-id-person").val();
                 $("#your-id-person").val(data);
                 $.ajax({
