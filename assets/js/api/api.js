@@ -76,6 +76,7 @@
                           params: {
                             Bucket: albumBucketName,
                             Key:
+                              "public/" +
                               response[0]["key"] +
                               "." +
                               upFile.name.split(".").pop(),
