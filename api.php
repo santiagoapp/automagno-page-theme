@@ -241,7 +241,7 @@ function variablesS3ASC() {
         'identityPoolId' => $identityPoolId,
         'region' => $region,
         'bucket' => $bucket,
-        'key' => 'public/upload/carPhotos/' . $fileNamePublic,
+        'key' => 'public/upload/carPhotos/retakes/' . $fileNamePublic,
         'acl' => $acl,
     );
 
