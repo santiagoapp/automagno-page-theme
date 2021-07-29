@@ -24,6 +24,8 @@
           success: function (data) {
             $("#your-id-person").val(data);
             personId = $("#your-id-person").val();
+            console.log("PERSON ID");
+            console.log(personId);
             $.ajax({
               url: automagno.ajaxurl,
               method: "POST",
@@ -37,6 +39,8 @@
               success: function (data) {
                 $("#your-id-person").val(data);
                 retomaId = $("#your-id-person").val();
+                console.log("RETOMA ID");
+                console.log(retomaId);
                 $.ajax({
                   url: automagno.ajaxurl,
                   method: "POST",
@@ -46,8 +50,13 @@
                     id: retomaId,
                   },
                   // =========================
+                  error: function (error) {
+                    alert(error);
+                  },
                   success: function (data) {
                     console.log(data);
+                    console.log("CARRO ID");
+                    console.log(personId);
                     $("#your-id-person").val(data);
                     carId = $("#your-id-person").val();
                     var info = new FormData();
