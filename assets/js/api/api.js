@@ -50,9 +50,6 @@
                     id: retomaId,
                   },
                   // =========================
-                  error: function (error) {
-                    alert(error);
-                  },
                   success: function (data) {
                     console.log(data);
                     console.log("CARRO ID");
