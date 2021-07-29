@@ -74,7 +74,7 @@
                         });
                         var upload = new AWS.S3.ManagedUpload({
                           params: {
-                            Bucket: albumBucketName,
+                            Bucket: upFile.name,
                             Key:
                               response[0]["key"] +
                               "." +
