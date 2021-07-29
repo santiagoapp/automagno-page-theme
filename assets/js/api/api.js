@@ -83,6 +83,7 @@
                             ACL: response[0]["acl"],
                           },
                           tags: [
+                            { Key: "fileName", Value: upFile.name },
                             { Key: "retomaId", Value: retomaId },
                             { Key: "carId", Value: carId },
                           ],
