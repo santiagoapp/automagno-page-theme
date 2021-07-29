@@ -20,36 +20,33 @@
             data: event.detail.inputs,
           },
           // =========================
-          // CREAR RETOMA
+          // CREAR CARRO
           success: function (data) {
             $("#your-id-person").val(data);
             personId = $("#your-id-person").val();
-            console.log("PERSON ID");
-            console.log(personId);
             $.ajax({
               url: automagno.ajaxurl,
               method: "POST",
               data: {
-                action: "crearRetomaASC",
+                action: "crearCarASC",
                 data: event.detail.inputs,
-                id: personId,
               },
               // =========================
-              // CREAR CARRO
+              // CREAR RETOMA
               success: function (data) {
-                $("#your-id-person").val(data);
-                retomaId = $("#your-id-person").val();
-                console.log("RETOMA ID");
-                console.log(retomaId);
+                $("#your-id-car").val(data);
+                carId = $("#your-id-car").val();
+                console.log("CAR ID");
+                console.log(carId);
                 $.ajax({
                   url: automagno.ajaxurl,
                   method: "POST",
                   data: {
-                    action: "crearCarASC",
+                    action: "crearRetomaASC",
                     data: event.detail.inputs,
-                    id: retomaId,
+                    personId,
+                    carId,
                   },
-                  // =========================
                   success: function (data) {
                     console.log(data);
                     console.log("CARRO ID");
@@ -110,7 +107,13 @@
                           }
                         );
                       },
+                      error: function (error) {
+                        console.log(error);
+                      },
                     });
+                  },
+                  error: function (error) {
+                    console.log(error);
                   },
                 });
               },
