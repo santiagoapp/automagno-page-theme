@@ -217,7 +217,7 @@ function connectionCURL($cadena_json){
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => $cadena_json,
     CURLOPT_HTTPHEADER => array(
-        "X-API-Key: da2-chkf4jxcavejnaansh273k3q4u",
+        "X-API-Key: da2-7hjlvtyegnaxlf262uxec66ba4",
         "Content-Type: application/json"
     ),
     ));
