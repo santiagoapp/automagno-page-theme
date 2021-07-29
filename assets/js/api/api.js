@@ -29,16 +29,19 @@
                 id: $("#your-id-person").val(),
               },
               // =========================
+              // CREAR CARRO
               success: function (data) {
-                $("#your-id-retoma").val(data);
+                console.log(data);
+                $("#your-id-person").val(data);
                 $.ajax({
                   url: automagno.ajaxurl,
                   method: "POST",
                   data: {
                     action: "crearCarASC",
                     data: event.detail.inputs,
-                    id: $("#your-id-retoma").val(),
+                    id: $("#your-id-person").val(),
                   },
+                  // =========================
                   success: function (data) {
                     console.log(data);
                     carId = data[0];

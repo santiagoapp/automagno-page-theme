@@ -193,7 +193,10 @@ function crearCarASC() {
     if ($response.data == null){
         $return = $response["errors"];
     }else{
-        $return = [$response["data"]["createCar"]["id"], $post_retomaId];
+        $tempresponse[0] = $response["data"]["createCar"]["id"]
+        $tempresponse[1] = $post_retomaId
+        $tempresponse[2] = $post_carVersionId
+        $return = $tempresponse;
     }
     wp_send_json( $return );
 }
