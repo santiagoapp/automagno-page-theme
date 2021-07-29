@@ -34,8 +34,8 @@
               // =========================
               // CREAR RETOMA
               success: function (data) {
-                $("#your-id-car").val(data);
-                carId = $("#your-id-car").val();
+                $("#your-id-person").val(data);
+                carId = $("#your-id-person").val();
                 console.log("CAR ID");
                 console.log(carId);
                 $.ajax({
@@ -49,10 +49,10 @@
                   },
                   success: function (data) {
                     console.log(data);
-                    console.log("CARRO ID");
-                    console.log(personId);
                     $("#your-id-person").val(data);
-                    carId = $("#your-id-person").val();
+                    retomaId = $("#your-id-person").val();
+                    console.log("RETAKE ID");
+                    console.log(retomaId);
                     var info = new FormData();
                     info.append("action", "variablesS3ASC");
                     info.append(
