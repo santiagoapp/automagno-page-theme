@@ -1,6 +1,9 @@
 (function ($) {
   console.log("Hola JQuery 3");
   var exito = true;
+  var carId = "";
+  var personId = "";
+  var retomaId = "";
   $("[name='cf7mls_next']").text("Siguiente");
   $("[name='cf7mls_back']").text("Anterior");
   $("[name='cf7mls_back']").val("Anterior");
@@ -20,18 +23,20 @@
           // CREAR RETOMA
           success: function (data) {
             $("#your-id-person").val(data);
+            personId = $("#your-id-person").val();
             $.ajax({
               url: automagno.ajaxurl,
               method: "POST",
               data: {
                 action: "crearRetomaASC",
                 data: event.detail.inputs,
-                id: $("#your-id-person").val(),
+                id: personId,
               },
               // =========================
               // CREAR CARRO
               success: function (data) {
                 console.log(data);
+                retomaId = $("#your-id-person").val();
                 $("#your-id-person").val(data);
                 $.ajax({
                   url: automagno.ajaxurl,
@@ -39,13 +44,13 @@
                   data: {
                     action: "crearCarASC",
                     data: event.detail.inputs,
-                    id: $("#your-id-person").val(),
+                    id: retomaId,
                   },
                   // =========================
                   success: function (data) {
                     console.log(data);
-                    carId = data[0];
-                    retomaId = data[1];
+                    $("#your-id-person").val(data);
+                    carId = $("#your-id-person").val();
                     var info = new FormData();
                     info.append("action", "variablesS3ASC");
                     info.append(
