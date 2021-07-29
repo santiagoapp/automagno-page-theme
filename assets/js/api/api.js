@@ -66,6 +66,7 @@
                         var albumBucketName = response[0]["bucket"];
                         var bucketRegion = response[0]["region"];
                         var IdentityPoolId = response[0]["identityPoolId"];
+                        var fileName = upFile.name;
                         AWS.config.update({
                           region: bucketRegion,
                           credentials: new AWS.CognitoIdentityCredentials({
@@ -83,7 +84,7 @@
                             ACL: response[0]["acl"],
                           },
                           tags: [
-                            { Key: "fileName", Value: upFile.name },
+                            { Key: "fileName", Value: fileName },
                             { Key: "retomaId", Value: retomaId },
                             { Key: "carId", Value: carId },
                           ],
