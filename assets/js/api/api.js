@@ -36,8 +36,6 @@
               success: function (data) {
                 $("#your-id-person").val(data);
                 carId = $("#your-id-person").val();
-                console.log("CAR ID");
-                console.log(carId);
                 $.ajax({
                   url: automagno.ajaxurl,
                   method: "POST",
@@ -48,11 +46,8 @@
                     carId,
                   },
                   success: function (data) {
-                    console.log(data);
                     $("#your-id-person").val(data);
                     retomaId = $("#your-id-person").val();
-                    console.log("RETAKE ID");
-                    console.log(retomaId);
                     var info = new FormData();
                     info.append("action", "variablesS3ASC");
                     info.append(
