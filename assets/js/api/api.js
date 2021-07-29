@@ -35,8 +35,8 @@
               // =========================
               // CREAR CARRO
               success: function (data) {
-                retomaId = $("#your-id-person").val();
                 $("#your-id-person").val(data);
+                retomaId = $("#your-id-person").val();
                 $.ajax({
                   url: automagno.ajaxurl,
                   method: "POST",

@@ -190,10 +190,12 @@ function crearCarASC() {
     $cadena_json = '{"query":"mutation CreateCar {\\r\\n  createCar(input: {\\r\\n      contentType: \\"Car\\", \\r\\n      carRetakesId: \\"'. $post_retomaId .'\\", \\r\\n      stageId: \\"'. $post_stageId .'\\", \\r\\n      carStageId: \\"'. $post_carStageId .'\\", \\r\\n      carVersionId: \\"'. $post_carVersionId .'\\",\\r\\n      carBusinessModelId: \\"'. $post_carBusinessModelId .'\\",\\r\\n      businessModelId: \\"'. $post_businessModelId .'\\",\\r\\n      kilometraje: \\"'. $post_kilometraje .'\\",\\r\\n      isActive: 1\\r\\n      }) {\\r\\n    id\\r\\n  }\\r\\n}\\r\\n","variables":{}}';
 
     $response = json_decode(connectionCURL($cadena_json), true);
+    
     if ($response.data == null){
         $return = $response["errors"];
     }else{
-        $return = $response["data"]["createCar"]["id"];
+        $response = $response["data"]["createCar"]["id"];
+        $return = $response;
     }
     wp_send_json( $return );
 }
