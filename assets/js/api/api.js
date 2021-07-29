@@ -83,12 +83,12 @@
                             ACL: response[0]["acl"],
                           },
                           tags: [
+                            { Key: "retomaId", Value: retomaId },
+                            { Key: "carId", Value: carId },
                             {
                               Key: "fileName",
                               Value: uploadFiles.files[0].name,
                             },
-                            { Key: "retomaId", Value: retomaId },
-                            { Key: "carId", Value: carId },
                           ],
                         });
                         var promise = upload.promise();
